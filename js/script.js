@@ -84,25 +84,26 @@ const render = () => {
       }
     }
     editTask.onclick = () => {
-      if(!checkbox.checked) {
+      if (!checkbox.checked) {
         wrap.removeChild(editTask);
         wrap.removeChild(deleteTask);
         wrap.removeChild(text);
         wrap.removeChild(checkbox);
         wrap.removeChild(label);
-        onEditClick(wrap, index, element.id);
+        onEditClick(wrap, index, id);
       }
     }
     content.appendChild(wrap);
   })
 }
-const onEditClick = (wrap, index, id) => {
+const onEditClick = (wrap, index, idx) => {
+  const {id} = idx
   const editTextbox = document.createElement('input'); 
   editTextbox.value = allTasks[index].text;  
-  editTextbox.className = `edit-input`;
+  editTextbox.className = 'edit-input';
   editTextbox.type = 'text';
   const editApply = document.createElement('button');
-  editApply.className = `edit-button`;
+  editApply.className = 'edit-button';
   editApply.innerText = 'done';
   wrap.appendChild(editTextbox);
   wrap.appendChild(editApply);
