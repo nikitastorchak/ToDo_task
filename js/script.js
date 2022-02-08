@@ -15,7 +15,7 @@ window.onload =  async () => {
   render();
 }
 const onButtonClick = async () => {
-  if(textbox.value !== ''){
+  if(textbox.value !== '') {
     const resp = await fetch(`${serverAdress}createTask`, {
       method: 'POST',
       headers: {
@@ -35,8 +35,8 @@ const onButtonClick = async () => {
 };
 
 const render = () => {
-  const content = document.getElementById('content') ;
-  while(content.firstChild){
+  const content = document.getElementById('content');
+  while(content.firstChild) {
     content.removeChild(content.firstChild);
   }
   allTasks
@@ -94,7 +94,7 @@ const render = () => {
       }
     }
     content.appendChild(wrap);
-  })
+  });
 }
 const onEditClick = (wrap, index, idx) => {
   const {id} = idx
